@@ -1,4 +1,4 @@
-/*	$Id: pow_zz.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: pow_zz.c,v 1.3 2008/02/27 17:10:46 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,20 +32,21 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#include "complex"
+#include <math.h>
 
-pow_zz(r,a,b)
-dcomplex *r, *a, *b;
+#include "f77lib.h"
+
+void
+pow_zz(dcomplex *r,dcomplex *a,dcomplex *b)
 {
-double logr, logi, x, y;
-double log(), exp(), cos(), sin(), atan2(), cabs();
+	double logr, logi, x, y;
 
-logr = log( cabs(a->dreal, a->dimag) );
-logi = atan2(a->dimag, a->dreal);
+	logr = log( hypot(a->dreal, a->dimag) );
+	logi = atan2(a->dimag, a->dreal);
 
-x = exp( logr * b->dreal - logi * b->dimag );
-y = logr * b->dimag + logi * b->dreal;
+	x = exp( logr * b->dreal - logi * b->dimag );
+	y = logr * b->dimag + logi * b->dreal;
 
-r->dreal = x * cos(y);
-r->dimag = x * sin(y);
+	r->dreal = x * cos(y);
+	r->dimag = x * sin(y);
 }
