@@ -1,4 +1,4 @@
-/*	$Id: i_dim.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: i_dim.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,8 +32,10 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-long int i_dim(a,b)
-long int *a, *b;
+#include "f77lib.h"
+
+long int
+i_dim(long int *a,long int *b)
 {
-return( *a > *b ? *a - *b : 0);
+	return( *a > *b ? *a - *b : 0);
 }

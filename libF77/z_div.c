@@ -1,4 +1,4 @@
-/*	$Id: z_div.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: z_div.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,10 +32,12 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-struct dcomplex { double dreal, dimag; };
+#include <stdlib.h>
 
-z_div(c, a, b)
-struct dcomplex *a, *b, *c;
+#include "f77lib.h"
+
+void
+z_div(dcomplex *c, dcomplex *a, dcomplex *b)
 {
 double ratio, den;
 double abr, abi;

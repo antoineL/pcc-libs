@@ -1,4 +1,4 @@
-/*	$Id: h_sign.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: h_sign.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,10 +32,13 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-short h_sign(a,b)
-short *a, *b;
+#include "f77lib.h"
+
+short
+h_sign(short *a,short *b)
 {
-short x;
-x = (*a >= 0 ? *a : - *a);
-return( *b >= 0 ? x : -x);
+	short x;
+
+	x = (*a >= 0 ? *a : - *a);
+	return( *b >= 0 ? x : -x);
 }

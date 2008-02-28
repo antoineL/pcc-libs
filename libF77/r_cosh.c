@@ -1,4 +1,4 @@
-/*	$Id: r_cosh.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: r_cosh.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,9 +32,12 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-double r_cosh(x)
-float *x;
+#include <math.h>
+ 
+#include "f77lib.h"
+
+double
+r_cosh(float *x)
 {
-double cosh();
-return( cosh(*x) );
+	return( cosh(*x) );
 }

@@ -1,4 +1,4 @@
-/*	$Id: z_exp.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: z_exp.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,15 +32,16 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#include "complex"
+#include <math.h>
+ 
+#include "f77lib.h"
 
-z_exp(r, z)
-dcomplex *r, *z;
+void
+z_exp(dcomplex *r, dcomplex *z)
 {
-double expx;
-double exp(), cos(), sin();
+	double expx;
 
-expx = exp(z->dreal);
-r->dreal = expx * cos(z->dimag);
-r->dimag = expx * sin(z->dimag);
+	expx = exp(z->dreal);
+	r->dreal = expx * cos(z->dimag);
+	r->dimag = expx * sin(z->dimag);
 }

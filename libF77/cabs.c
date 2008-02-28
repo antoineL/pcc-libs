@@ -1,4 +1,4 @@
-/*	$Id: cabs.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: cabs.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,24 +32,28 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-double cabs(real, imag)
-double real, imag;
+#include <math.h>
+ 
+#include "f77lib.h"
+
+double
+fcabs(double real, double imag)
 {
-double temp, sqrt();
+	double temp;
 
-if(real < 0)
-	real = -real;
-if(imag < 0)
-	imag = -imag;
-if(imag > real){
-	temp = real;
-	real = imag;
-	imag = temp;
-}
-if((real+imag) == real)
-	return(real);
+	if(real < 0)
+		real = -real;
+	if(imag < 0)
+		imag = -imag;
+	if(imag > real){
+		temp = real;
+		real = imag;
+		imag = temp;
+	}
+	if((real+imag) == real)
+		return(real);
 
-temp = imag/real;
-temp = real*sqrt(1.0 + temp*temp);  /*overflow!!*/
-return(temp);
+	temp = imag/real;
+	temp = real*sqrt(1.0 + temp*temp);  /*overflow!!*/
+	return(temp);
 }

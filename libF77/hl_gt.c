@@ -1,4 +1,4 @@
-/*	$Id: hl_gt.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: hl_gt.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,9 +32,10 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-short l_gt(a,b,la,lb)
-char *a, *b;
-long int la, lb;
+#include "f77lib.h"
+
+short
+hl_gt(char *a,char *b,long int la,long int lb)
 {
-return(s_cmp(a,b,la,lb) > 0);
+	return(s_cmp(a,b,la,lb) > 0);
 }

@@ -1,4 +1,4 @@
-/*	$Id: c_sqrt.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: c_sqrt.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,25 +32,24 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#include "complex"
+#include <math.h>
+ 
+#include "f77lib.h"
 
-c_sqrt(r, z)
-complex *r, *z;
+void
+c_sqrt(complex *r, complex *z)
 {
-double mag, sqrt(), cabs();
+	double mag;
 
-if( (mag = cabs(z->real, z->imag)) == 0.)
-	r->real = r->imag = 0.;
-else if(z->real > 0)
-	{
-	r->real = sqrt(0.5 * (mag + z->real) );
-	r->imag = z->imag / r->real / 2;
-	}
-else
-	{
-	r->imag = sqrt(0.5 * (mag - z->real) );
-	if(z->imag < 0)
-		r->imag = - r->imag;
-	r->real = z->imag / r->imag /2;
+	if( (mag = fcabs(z->real, z->imag)) == 0.)
+		r->real = r->imag = 0.;
+	else if(z->real > 0) {
+		r->real = sqrt(0.5 * (mag + z->real) );
+		r->imag = z->imag / r->real / 2;
+	} else {
+		r->imag = sqrt(0.5 * (mag - z->real) );
+		if(z->imag < 0)
+			r->imag = - r->imag;
+		r->real = z->imag / r->imag /2;
 	}
 }

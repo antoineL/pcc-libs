@@ -1,4 +1,4 @@
-/*	$Id: r_int.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: r_int.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,8 +32,10 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-double r_int(x)
-float *x;
+#include "f77lib.h"
+
+double
+r_int(float *x)
 {
-return( (long int) (*x) );
+	return( (long int) (*x) );
 }

@@ -1,4 +1,4 @@
-/*	$Id: h_len.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: h_len.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,9 +32,10 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-short h_len(s, n)
-char *s;
-long int n;
+#include "f77lib.h"
+
+short
+h_len(char *s, long int n)
 {
-return(n);
+	return(n);
 }

@@ -1,4 +1,4 @@
-/*	$Id: d_nint.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: d_nint.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,9 +32,11 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-double d_nint(x)
-double *x;
+#include "f77lib.h"
+
+double
+d_nint(double *x)
 {
-return( (*x)>=0 ?
-	(long int) (*x + .5) : (long int) (*x - .5) );
+	return( (*x)>=0 ?
+		(long int) (*x + .5) : (long int) (*x - .5) );
 }

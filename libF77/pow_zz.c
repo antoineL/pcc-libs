@@ -1,4 +1,4 @@
-/*	$Id: pow_zz.c,v 1.3 2008/02/27 17:10:46 ragge Exp $	*/
+/*	$Id: pow_zz.c,v 1.4 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -41,7 +41,7 @@ pow_zz(dcomplex *r,dcomplex *a,dcomplex *b)
 {
 	double logr, logi, x, y;
 
-	logr = log( hypot(a->dreal, a->dimag) );
+	logr = log( fcabs(a->dreal, a->dimag) );
 	logi = atan2(a->dimag, a->dreal);
 
 	x = exp( logr * b->dreal - logi * b->dimag );

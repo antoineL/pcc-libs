@@ -1,4 +1,4 @@
-/*	$Id: getarg_.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: getarg_.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -37,23 +37,22 @@
  * returns the kth unix command argument in fortran character
  * variable argument c
 */
+#include "f77lib.h"
 
-getarg_(n, s, ls)
-long int *n;
-char *s;
-long int ls;
+void
+getarg_(long int *n, char *s, long int ls)
 {
-extern int xargc;
-extern char **xargv;
-char *t;
-int i;
+	extern int xargc;
+	extern char **xargv;
+	char *t;
+	int i;
 
-if(*n>0 && *n<xargc)
-	t = xargv[*n];
-else
-	t = "";
-for(i = 0; i<ls && *t!='\0' ; ++i)
-	*s++ = *t++;
-for( ; i<ls ; ++i)
-	*s++ = ' ';
+	if(*n>0 && *n<xargc)
+		t = xargv[*n];
+	else
+		t = "";
+	for(i = 0; i<ls && *t!='\0' ; ++i)
+		*s++ = *t++;
+	for( ; i<ls ; ++i)
+		*s++ = ' ';
 }

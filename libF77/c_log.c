@@ -1,4 +1,4 @@
-/*	$Id: c_log.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: c_log.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,13 +32,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#include "complex"
+#include <math.h>
 
-c_log(r, z)
-complex *r, *z;
+#include "f77lib.h"
+
+void
+c_log(complex *r, complex *z)
 {
-double log(), cabs(), atan2();
 
-r->imag = atan2(z->imag, z->real);
-r->real = log( cabs(z->real, z->imag) );
+	r->imag = atan2(z->imag, z->real);
+	r->real = log( fcabs(z->real, z->imag) );
 }

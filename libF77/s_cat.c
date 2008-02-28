@@ -1,4 +1,4 @@
-/*	$Id: s_cat.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: s_cat.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,24 +32,24 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-s_cat(lp, rpp, rnp, np, ll)
-char *lp, *rpp[];
-long int rnp[], *np, ll;
-{
-int i, n, nc;
-char *rp;
+#include "f77lib.h"
 
-n = *np;
-for(i = 0 ; i < n ; ++i)
-	{
-	nc = ll;
-	if(rnp[i] < nc)
-		nc = rnp[i];
-	ll -= nc;
-	rp = rpp[i];
-	while(--nc >= 0)
-		*lp++ = *rp++;
+void
+s_cat(char *lp, char *rpp[], long int rnp[], long int *np, long int ll)
+{
+	int i, n, nc;
+	char *rp;
+
+	n = *np;
+	for(i = 0 ; i < n ; ++i) {
+		nc = ll;
+		if(rnp[i] < nc)
+			nc = rnp[i];
+		ll -= nc;
+		rp = rpp[i];
+		while(--nc >= 0)
+			*lp++ = *rp++;
 	}
-while(--ll >= 0)
-	*lp++ = ' ';
+	while(--ll >= 0)
+		*lp++ = ' ';
 }

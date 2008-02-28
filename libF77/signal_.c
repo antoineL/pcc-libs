@@ -1,4 +1,4 @@
-/*	$Id: signal_.c,v 1.2 2008/02/26 19:54:41 ragge Exp $	*/
+/*	$Id: signal_.c,v 1.3 2008/02/28 16:48:50 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,12 +32,18 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
-signal_(sigp, procp)
-int *sigp, (**procp)();
-{
-int sig, proc;
-sig = *sigp;
-proc = *procp;
+#include <signal.h>
 
-return( signal(sig, proc) );
+#include "f77lib.h"
+
+void (*
+signal_(int *sigp, void (**procp)(int)))(int)
+{
+	void (*proc)(int);
+	int sig;
+
+	sig = *sigp;
+	proc = *procp;
+
+	return( signal(sig, proc) );
 }
