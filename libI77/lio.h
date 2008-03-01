@@ -1,4 +1,4 @@
-/*	$Id: lio.h,v 1.2 2008/02/26 19:54:44 ragge Exp $	*/
+/*	$Id: lio.h,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -72,4 +72,6 @@ typedef union
 	double	fldouble;
 } flex;
 extern int scale;
-extern int (*lioproc)();
+extern int (*lioproc)(ftnint *number,flex *ptr,ftnlen len,ftnint type);
+int do_lio(ftnint *type,ftnint *number,flex *ptr,ftnlen len);
+

@@ -1,4 +1,4 @@
-/*	$Id: fmtlib.c,v 1.2 2008/02/26 19:54:44 ragge Exp $	*/
+/*	$Id: fmtlib.c,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -32,8 +32,12 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  */
+#include "fio.h"
+
 #define MAXINTLENGTH 10
-char *icvt(value,ndigit,sign) long value; int *ndigit,*sign;
+
+char *
+icvt(long value,int *ndigit,int *sign)
 {	static char buf[MAXINTLENGTH+1];
 	register int i;
 	if(value>0) *sign=0;

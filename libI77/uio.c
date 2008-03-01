@@ -1,4 +1,4 @@
-/*	$Id: uio.c,v 1.2 2008/02/26 19:54:44 ragge Exp $	*/
+/*	$Id: uio.c,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -34,7 +34,11 @@
  */
 #include "fio.h"
 int reclen;
-do_us(number,ptr,len) ftnint *number; ftnlen len; char *ptr;
+
+static int do_ud(ftnint *number, char *ptr, ftnlen len);
+
+static int
+do_us(ftnint *number, char *ptr, ftnlen len)
 {
 	if(reading)
 	{
@@ -53,13 +57,17 @@ do_us(number,ptr,len) ftnint *number; ftnlen len; char *ptr;
 		return(0);
 	}
 }
-do_uio(number,ptr,len) ftnint *number; ftnlen len; char *ptr;
+
+int
+do_uio(ftnint *number, char *ptr, ftnlen len)
 {
 	if(sequential)
 		return(do_us(number,ptr,len));
 	else	return(do_ud(number,ptr,len));
 }
-do_ud(number,ptr,len) ftnint *number; ftnlen len; char *ptr;
+
+int
+do_ud(ftnint *number, char *ptr, ftnlen len)
 {
 	recpos += *number * len;
 	if(recpos > curunit->url && curunit->url!=1)
