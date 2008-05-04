@@ -1,4 +1,4 @@
-/*	$Id: util.c,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
+/*	$Id: util.c,v 1.4 2008/05/04 10:38:33 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -34,7 +34,7 @@
  */
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/dir.h>
+#include <dirent.h>
 
 #include <fcntl.h>
 #include <stdlib.h>
@@ -94,7 +94,7 @@ static char *
 curdir(void)
 {	char name[256],*bufpos = name;
 	struct stat x;
-	struct direct y;
+	struct dirent y;
 	int file,i;
 	*bufpos++ = 0;
 loop:	stat(".",&x);

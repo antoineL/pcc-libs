@@ -1,4 +1,4 @@
-/*	$Id: open.c,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
+/*	$Id: open.c,v 1.4 2008/05/04 10:38:33 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -104,7 +104,7 @@ unconnected:
 	 case 's':
 		b->uscrtch=1;
 		strcpy(buf,"tmp.FXXXXXX");
-		mktemp(buf);
+		close(mkstemp(buf));
 		goto done;
 	case 'n':
 		b->uscrtch=0;

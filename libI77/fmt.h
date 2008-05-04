@@ -1,4 +1,4 @@
-/*	$Id: fmt.h,v 1.3 2008/03/01 13:44:12 ragge Exp $	*/
+/*	$Id: fmt.h,v 1.4 2008/05/04 10:38:33 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -68,9 +68,9 @@ struct syl
 #define AW 31
 extern struct syl syl[];
 extern int pc,parenlvl,revloc;
-extern int (*doed)(struct syl *p, void *ptr, ftnlen len),
-	(*doned)(struct syl *p, char *ptr);
-extern int (*dorevert)(void),(*donewrec)(void),(*doend)(void);
+int (*doed)(struct syl *p, void *ptr, ftnlen len);
+int (*doned)(struct syl *p, char *ptr);
+int (*dorevert)(void),(*donewrec)(void),(*doend)(void);
 extern flag cblank,cplus,workdone;
 extern char *fmtbuf;
 extern int scale;
