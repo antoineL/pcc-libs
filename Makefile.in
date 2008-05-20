@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.1 2008/05/20 05:29:06 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.2 2008/05/20 06:27:40 gmcgarry Exp $
 #
 # top-level Makefile
 #
@@ -19,6 +19,7 @@ clean:
 
 distclean: clean
 	cd libsoftfloat && $(MAKE) distclean
+	cd libpcc && $(MAKE) distclean
 	/bin/rm -rf Makefile config.log config.status \
 		configure.lineno config.h autom4te.cache
 
