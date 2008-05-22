@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.2 2008/05/20 06:25:26 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.3 2008/05/22 05:11:06 gmcgarry Exp $
 #
 # Makefile.in for libpccsoftfloat.a
 #
@@ -23,7 +23,6 @@ LIBS = @LIBS@
 AR = @AR@
 RANLIB = @RANLIB@
 INSTALL = @INSTALL@
-INSTALL_PROGRAM = @INSTALL_PROGRAM@
 
 OBJS +=		softfloat.o
 
@@ -50,7 +49,7 @@ softfloat.o : bits64/softfloat.c
 
 install:
 	test -z "$(PCCLIBDIR)" || mkdir -p "$(PCCLIBDIR)"
-	$(INSTALL_PROGRAM) $(DEST) $(PCCLIBDIR)
+	$(INSTALL) $(DEST) $(PCCLIBDIR)
 
 clean:
 	/bin/rm -f $(OBJS) $(DEST)
