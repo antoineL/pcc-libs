@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.1 2008/06/04 01:44:43 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.2 2008/06/04 02:09:27 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -19,10 +19,6 @@
 
 void __start(int, char **);
 
-char *__progname = "";
-int _argc;
-char **_argv;
-
 __asm("	.text				\n"
 "	.align	4			\n"
 "	.globl	_start			\n"
@@ -39,16 +35,10 @@ __asm("	.text				\n"
 void
 __start(int argc, char *argv[])
 {
-	if ((__progname = argv[0]) != NULL) {	/* NULL ptr if argc = 0 */
-		if ((__progname = _strrchr(__progname, '/')) == NULL)
-			__progname = argv[0];
-		else
-			__progname++;
-	}
 
 #ifdef PROFILE
 	atexit(_mcleanup);
-	monstartup((u_long)&_eprol, (u_long)&_etext);
+	monstartup((unsigned long)&_eprol, (unsigned long)&_etext);
 #endif
 
 	_init();

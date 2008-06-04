@@ -1,4 +1,4 @@
-/* $Id: common.c,v 1.1 2008/06/04 01:44:43 gmcgarry Exp $	*/
+/* $Id: common.c,v 1.2 2008/06/04 02:09:27 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -14,20 +14,6 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-static char *
-_strrchr(char *p, int ch)
-{
-	char *save;
-
-	for (save = NULL;; ++p) {
-		if (*p == ch)
-			save = (char *)p;
-		if (!*p)
-			return(save);
-	}
-	/* NOTREACHED */
-}
 
 #ifdef PROFILE
 static void
