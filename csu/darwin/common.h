@@ -1,4 +1,4 @@
-/*	$Id: common.h,v 1.1 2008/06/01 01:28:34 gmcgarry Exp $	*/
+/*	$Id: common.h,v 1.2 2008/06/04 01:41:17 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -14,6 +14,8 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+#define NULL (void *)0
 
 extern int main(int argc, char *argv[], char *envp[]);
 extern void exit(int);
