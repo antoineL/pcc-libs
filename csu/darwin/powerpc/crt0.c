@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.2 2008/06/04 01:41:17 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -24,7 +24,7 @@ char *__progname = "";
 int _argc;
 char **_argv;
 
-__asm(
+asm(
 #ifdef DYNAMIC
 	"	.text\n"
 	"	.symbol_stub\n"
@@ -93,7 +93,7 @@ _start(int argc, char *argv[], char *envp[])
 /*
  *  dylib constructors/destructors
  */
-__asm(
+asm(
 	"	.constructor\n"
 	"	.p2align 2\n"
 	"	.long __dyld_init\n"
@@ -107,7 +107,7 @@ __asm(
  *
  *  jump to the linker via the pointer in the __dyld section
  */
-__asm(
+asm(
 	"	.text\n"
 	"	.private_extern __dyld_func_lookup\n"
 	"__dyld_func_lookup:\n"
@@ -120,7 +120,7 @@ __asm(
 /*
  *  void dyld_stub_binding_helper(void)
  */
-__asm(
+asm(
 	"	.text\n"
 	"	.private_extern dyld_stub_binding_helper\n"
 	"	.p2align 2\n"
@@ -136,7 +136,7 @@ __asm(
 /*
  * __dyld section
  */
-__asm(
+asm(
 	"	.dyld\n"
 	"	.p2align 2\n"
 	"Ldyld_lazy_binder:\n"
@@ -152,6 +152,8 @@ __asm(
 
 #endif
 
-__asm("	.subsections_via_symbols\n");
+asm("\t.subsections_via_symbols\n");
 
 #include "common.c"
+
+IDENT("$Id: crt0.c,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $");

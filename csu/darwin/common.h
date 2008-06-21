@@ -1,4 +1,4 @@
-/*	$Id: common.h,v 1.2 2008/06/04 01:41:17 gmcgarry Exp $	*/
+/*	$Id: common.h,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -14,6 +14,12 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+#if defined(__ppc__)
+#define IDENT(x) asm(".cstring\n\t.ascii \"" x "\\0\"")
+#elif defined(__i386__)
+#define IDENT(x) asm(".cstring\n\t.ascii \"" x "\\0\"")
+#endif
 
 #define NULL (void *)0
 
