@@ -1,4 +1,4 @@
-/* $Id: common.c,v 1.2 2008/06/04 02:09:27 gmcgarry Exp $	*/
+/* $Id: common.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -15,6 +15,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include "common.h"
+
 #ifdef PROFILE
 static void
 _mcleanup(void)
@@ -22,3 +24,5 @@ _mcleanup(void)
         monitor(0, 0, 0, 0, 0);
 }
 #endif
+
+IDENT("$Id: common.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $");

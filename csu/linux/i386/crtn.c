@@ -1,4 +1,4 @@
-/* $Id: crtn.c,v 1.1 2008/06/04 01:44:43 gmcgarry Exp $ */
+/* $Id: crtn.c,v 1.2 2008/07/02 00:19:20 gmcgarry Exp $ */
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -15,6 +15,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include "common.h"
+
 asm(	"	.section .init			\n"
 	"	leave				\n"
 	"	ret				\n"
@@ -24,3 +26,5 @@ asm(	"	.section .fini			\n"
 	"	leave				\n"
 	"	ret				\n"
 	"	.previous			\n");
+
+IDENT("$Id: crtn.c,v 1.2 2008/07/02 00:19:20 gmcgarry Exp $");

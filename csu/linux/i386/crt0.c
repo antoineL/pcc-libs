@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.2 2008/06/04 02:09:27 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -19,7 +19,7 @@
 
 void __start(int, char **);
 
-__asm("	.text				\n"
+asm("	.text				\n"
 "	.align	4			\n"
 "	.globl	_start			\n"
 "_start:				\n"
@@ -48,3 +48,5 @@ __start(int argc, char *argv[])
 }
 
 #include "common.c"
+
+IDENT("$Id: crt0.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $");

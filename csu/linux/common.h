@@ -1,4 +1,4 @@
-/* $Id: common.h,v 1.2 2008/06/04 02:09:27 gmcgarry Exp $ */
+/* $Id: common.h,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $ */
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -14,6 +14,8 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+#define IDENT(x) asm(".ident\t\"" x "\"")
 
 #define NULL (void *)0
 
