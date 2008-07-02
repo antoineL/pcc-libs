@@ -1,3 +1,4 @@
+/*	$Id: floatdidf.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
 /*	$NetBSD: floatdidf.c,v 1.6 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -32,15 +33,6 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-
-#include <sys/cdefs.h>
-#if defined(LIBC_SCCS) && !defined(lint)
-#if 0
-static char sccsid[] = "@(#)floatdidf.c	8.1 (Berkeley) 6/4/93";
-#else
-__RCSID("$NetBSD: floatdidf.c,v 1.6 2003/08/07 16:43:16 agc Exp $");
-#endif
-#endif /* LIBC_SCCS and not lint */
 
 #include "quad.h"
 
