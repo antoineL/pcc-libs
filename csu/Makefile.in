@@ -1,0 +1,15 @@
+#	$Id: Makefile.in,v 1.1 2008/07/18 08:15:39 gmcgarry Exp $
+#
+# top-level Makefile
+#
+
+TARGOS = @targos@
+TARGMACH = @targmach@
+TARGET = @target@
+
+MFLAGS += MACH=$(TARGMACH) TARGET=$(TARGET)
+
+all clean install:
+	if test -d $(TARGOS) ; then cd $(TARGOS) && $(MAKE) $(MFLAGS) $@; fi
+
+distclean: clean
