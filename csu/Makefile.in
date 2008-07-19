@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.3 2008/07/19 01:24:24 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.4 2008/07/19 01:54:22 gmcgarry Exp $
 #
 # top-level Makefile
 #
@@ -13,7 +13,10 @@ TARGET = @target@
 VERSION = @version@
 PCCLIBDIR = $(libdir)/pcc/$(TARGET)/$(VERSION)/lib
 
-MFLAGS += MACH=$(TARGMACH) TARGET=$(TARGET) VERSION=$(VERSION) \
+CC = @CC@
+CFLAGS = @CFLAGS@
+
+MFLAGS += CC=$(CC) MACH=$(TARGMACH) TARGET=$(TARGET) VERSION=$(VERSION) \
 	PCCLIBDIR=$(PCCLIBDIR)
 
 all clean install:
