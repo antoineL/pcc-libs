@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.2 2008/06/19 13:50:27 gmcgarry Exp $	*/
+/*      $Id: ssp.c,v 1.3 2008/08/24 05:15:50 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -18,7 +18,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef __PCC__
+#if defined(__lint__)
+#define __constructor /* define away */
+#define __destructor /* define away */
+#elif defined(__PCC__)
 #define __constructor _Pragma("init")
 #define __destructor _Pragma("fini")
 #else
