@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.3 2008/08/24 05:15:50 gmcgarry Exp $	*/
+/*      $Id: ssp.c,v 1.4 2008/12/12 07:59:00 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -24,12 +24,19 @@
 #elif defined(__PCC__)
 #define __constructor _Pragma("init")
 #define __destructor _Pragma("fini")
-#else
+#elif defined(__GNUC__)
 #define __constructor __attribute ((constructor))
 #define __destructor __attribute ((destructor))
+#else
+#define __constructor
+#define __destructor
 #endif
 
+#ifdef __MSC__
+#define __progname "ERROR"
+#else
 extern char *__progname;
+#endif
 
 int __stack_chk_guard;
 
