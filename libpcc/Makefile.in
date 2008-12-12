@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.8 2008/07/22 10:05:06 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.9 2008/12/12 21:07:15 gmcgarry Exp $
 #
 # Makefile.in for libpccsoftfloat.a
 #
@@ -18,7 +18,7 @@ VERSION = @version@
 PCCLIBDIR = $(libdir)/pcc/$(TARGET)/$(VERSION)/lib
 PCCINCDIR = $(libdir)/pcc/$(TARGET)/$(VERSION)/include
 
-CPPFLAGS += @CPPFLAGS@ -I$(top_builddir) -I$(srcdir) -I$(srcdir)/arch/$(TARGMACH) @ENDIAN_FLAG@
+CPPFLAGS += @CPPFLAGS@ -I$(srcdir) @ENDIAN_FLAG@
 
 LIBS = @LIBS@
 AR = @AR@
