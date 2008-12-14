@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.5 2008/12/12 21:10:53 gmcgarry Exp $	*/
+/*      $Id: ssp.c,v 1.6 2008/12/14 21:24:01 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -64,7 +64,7 @@ __ssp_init(void)
 void
 __stack_chk_fail(void)
 {
-	const char *msg = ": stack smashing attack detected\n";
+	const char msg[] = ": stack smashing attack detected\n";
 	write(2, __progname, strlen(__progname));
 	write(2, msg, sizeof(msg));
 	abort();
