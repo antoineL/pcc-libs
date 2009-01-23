@@ -1,4 +1,4 @@
-/*	$Id: crtbegin.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $	*/
+/*	$Id: crtbegin.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 1998, 2001, 2002 The NetBSD Foundation, Inc.
  * All rights reserved.
@@ -33,6 +33,9 @@
  */
 
 #include "common.h"
+
+void __do_global_dtors_aux(void);
+void __do_global_ctors_aux(void);
 
 extern void (*__CTOR_LIST__[1])(void);
 extern void (*__DTOR_LIST__[1])(void);
@@ -108,4 +111,4 @@ void __call_##func(void)						\
 MD_CALL_STATIC_FUNCTION(.init, __do_global_ctors_aux)
 MD_CALL_STATIC_FUNCTION(.fini, __do_global_dtors_aux)
 
-IDENT("$Id: crtbegin.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $");
+IDENT("$Id: crtbegin.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $");

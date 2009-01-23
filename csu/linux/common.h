@@ -1,4 +1,4 @@
-/* $Id: common.h,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $ */
+/* $Id: common.h,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $ */
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -25,8 +25,8 @@ extern int atexit(void (*fcn)(void));
 
 #if PROFILE
 extern void monstartup(unsigned long, unsigned long);
-static void _mcleanup(void);
-extern void monitor(char *, char *, char *, int, int);
+extern void _mcleanup(void);
+extern unsigned char _etext, _eprol;
 #endif
 
 extern void _init(void);

@@ -1,4 +1,4 @@
-/* $Id: common.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $	*/
+/* $Id: common.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -18,11 +18,7 @@
 #include "common.h"
 
 #ifdef PROFILE
-static void
-_mcleanup(void)
-{
-        monitor(0, 0, 0, 0, 0);
-}
+asm("	.text\n_eprol:");
 #endif
 
-IDENT("$Id: common.c,v 1.3 2008/07/02 00:19:20 gmcgarry Exp $");
+IDENT("$Id: common.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $");
