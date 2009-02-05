@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.1 2008/06/21 10:17:50 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.2 2009/02/05 22:59:52 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -112,7 +112,7 @@ asm(
 	"	.text\n"
 	"	.private_extern __dyld_func_lookup\n"
 	"__dyld_func_lookup:\n"
-	"	jmp Ldyld_func_lookup\n"
+	"	jmp *Ldyld_func_lookup\n"
 );
 
 /*
@@ -124,7 +124,7 @@ asm(
 	"	.p2align 2\n"
 	"dyld_stub_binding_helper:\n"
 	"	pushl $__mh_execute_header\n"
-	"	jmp Ldyld_lazy_binder\n"
+	"	jmp *Ldyld_lazy_binder\n"
 );
 
 /*
@@ -150,4 +150,4 @@ asm("\t.subsections_via_symbols\n");
 
 #include "common.c"
 
-IDENT("$Id: crt0.c,v 1.1 2008/06/21 10:17:50 gmcgarry Exp $");
+IDENT("$Id: crt0.c,v 1.2 2009/02/05 22:59:52 gmcgarry Exp $");
