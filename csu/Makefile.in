@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.5 2008/08/24 05:19:10 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.6 2009/02/09 21:12:04 gmcgarry Exp $
 #
 # top-level Makefile
 #
@@ -22,3 +22,4 @@ all clean install:
 	if test -d $(TARGOS) ; then cd $(TARGOS) && $(MAKE) $(MFLAGS) $@; fi
 
 distclean: clean
+	/bin/rm -f Makefile
