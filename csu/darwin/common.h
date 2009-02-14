@@ -1,4 +1,4 @@
-/*	$Id: common.h,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $	*/
+/*	$Id: common.h,v 1.4 2009/02/14 11:40:28 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -27,8 +27,10 @@ extern int main(int argc, char *argv[], char *envp[]);
 extern void exit(int);
 extern int atexit(void (*fcn)(void));
 
+#ifdef CRT
 static char *_strrchr(char *, int);
 static int _strcmp(char *, char *);
+#endif
 
 #if PROFILE
 extern void moninit(void);

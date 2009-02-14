@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.4 2009/02/14 11:40:28 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -72,7 +72,7 @@ _start(int argc, char *argv[], char *envp[])
 	 * Initialise hooks inside libc
 	 */
 	if (mach_init_routine)
-		(void)(*mach_init_routine)();
+		(*mach_init_routine)();
 	if (_cthread_init_routine)
 		(*_cthread_init_routine)();
 
@@ -156,4 +156,4 @@ asm("\t.subsections_via_symbols\n");
 
 #include "common.c"
 
-IDENT("$Id: crt0.c,v 1.3 2008/06/21 10:17:14 gmcgarry Exp $");
+IDENT("$Id: crt0.c,v 1.4 2009/02/14 11:40:28 gmcgarry Exp $");
