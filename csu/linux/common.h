@@ -1,4 +1,4 @@
-/* $Id: common.h,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $ */
+/* $Id: common.h,v 1.5 2009/02/14 23:49:40 gmcgarry Exp $ */
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -19,7 +19,7 @@
 
 #define NULL (void *)0
 
-extern int main(int argc, char *argv[]);
+extern int main(int argc, char *argv[], char *envp[]);
 extern void exit(int);
 extern int atexit(void (*fcn)(void));
 
