@@ -1,4 +1,4 @@
-/*	$Id: muldi3.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: muldi3.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: muldi3.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -96,8 +96,7 @@
 static quad_t __lmulq(unsigned int, unsigned int);
 
 quad_t
-__muldi3(a, b)
-	quad_t a, b;
+__muldi3(quad_t a, quad_t b)
 {
 	union uu u, v, low, prod;
 	unsigned int high, mid, udiff, vdiff;

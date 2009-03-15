@@ -1,4 +1,4 @@
-/*	$Id: ashldi3.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: ashldi3.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: ashldi3.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -41,9 +41,7 @@
  * This is the same as logical shift left!
  */
 quad_t
-__ashldi3(a, shift)
-	quad_t a;
-	qshift_t shift;
+__ashldi3(quad_t a, qshift_t shift)
 {
 	union uu aa;
 

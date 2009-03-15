@@ -1,4 +1,4 @@
-/*	$Id: fixunssfdi.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: fixunssfdi.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: fixunssfdi.c,v 1.6 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -46,8 +46,6 @@
  *
  * Not sure what to do with negative numbers---for now, anything out
  * of range becomes UQUAD_MAX.
- *
- * N.B.: must use new ANSI syntax (sorry).
  */
 u_quad_t
 __fixunssfdi(float f)

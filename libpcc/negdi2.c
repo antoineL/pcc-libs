@@ -1,4 +1,4 @@
-/*	$Id: negdi2.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: negdi2.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: negdi2.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -40,8 +40,7 @@
  * Return -a (or, equivalently, 0 - a), in quad.  See subdi3.c.
  */
 quad_t
-__negdi2(a)
-	quad_t a;
+__negdi2(quad_t a)
 {
 	union uu aa, res;
 

@@ -1,4 +1,4 @@
-/*	$Id: divdi3.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: divdi3.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: divdi3.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * ??? if -1/2 should produce -1 on this machine, this code is wrong
  */
 quad_t
-__divdi3(a, b)
-	quad_t a, b;
+__divdi3(quad_t a, quad_t b)
 {
 	u_quad_t ua, ub, uq;
 	int neg = 0;

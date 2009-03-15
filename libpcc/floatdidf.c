@@ -1,4 +1,4 @@
-/*	$Id: floatdidf.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: floatdidf.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: floatdidf.c,v 1.6 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -40,8 +40,7 @@
  * Convert (signed) quad to double.
  */
 double
-__floatdidf(x)
-	quad_t x;
+__floatdidf(quad_t x)
 {
 	double d;
 	union uu u;

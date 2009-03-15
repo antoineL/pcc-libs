@@ -1,4 +1,4 @@
-/*	$Id: floatunsdidf.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: floatunsdidf.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: floatunsdidf.c,v 1.6 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * This is exactly like floatdidf.c except that negatives never occur.
  */
 double
-__floatunsdidf(x)
-	u_quad_t x;
+__floatunsdidf(u_quad_t x)
 {
 	double d;
 	union uu u;

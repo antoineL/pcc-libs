@@ -1,4 +1,4 @@
-/*	$Id: floatdisf.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: floatdisf.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: floatdisf.c,v 1.6 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -40,8 +40,7 @@
  * Convert (signed) quad to float.
  */
 float
-__floatdisf(x)
-	quad_t x;
+__floatdisf(quad_t x)
 {
 	float f;
 	union uu u;

@@ -1,4 +1,4 @@
-/*	$Id: fixdfdi.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: fixdfdi.c,v 1.3 2009/03/15 00:20:41 gmcgarry Exp $	*/
 /*	$NetBSD: fixdfdi.c,v 1.4 2003/08/07 16:43:16 agc Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * We clamp anything that is out of range.
  */
 quad_t
-__fixdfdi(x)
-	double x;
+__fixdfdi(double x)
 {
 	if (x < 0)
 		if (x <= QUAD_MIN)

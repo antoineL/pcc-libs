@@ -1,4 +1,4 @@
-/*	$Id: udivdi3.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: udivdi3.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: udivdi3.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -40,8 +40,7 @@
  * Divide two unsigned quads.
  */
 u_quad_t
-__udivdi3(a, b)
-	u_quad_t a, b;
+__udivdi3(u_quad_t a, u_quad_t b)
 {
 
 	return (__qdivrem(a, b, (u_quad_t *)0));

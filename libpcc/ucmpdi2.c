@@ -1,4 +1,4 @@
-/*	$Id: ucmpdi2.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: ucmpdi2.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: ucmpdi2.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * Neither a nor b are considered signed.
  */
 int
-__ucmpdi2(a, b)
-	u_quad_t a, b;
+__ucmpdi2(u_quad_t a, u_quad_t b)
 {
 	union uu aa, bb;
 

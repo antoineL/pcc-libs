@@ -1,4 +1,4 @@
-/*	$Id: notdi2.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: notdi2.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: notdi2.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * than `not'.
  */
 quad_t
-__one_cmpldi2(a)
-	quad_t a;
+__one_cmpldi2(quad_t a)
 {
 	union uu aa;
 

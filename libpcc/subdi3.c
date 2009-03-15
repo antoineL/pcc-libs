@@ -1,4 +1,4 @@
-/*	$Id: subdi3.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: subdi3.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: subdi3.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -41,8 +41,7 @@
  * from a single u_int difference x-y occurs if and only if (x-y) > x.
  */
 quad_t
-__subdi3(a, b)
-	quad_t a, b;
+__subdi3(quad_t a, quad_t b)
 {
 	union uu aa, bb, diff;
 

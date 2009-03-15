@@ -1,4 +1,4 @@
-/*	$Id: qdivrem.c,v 1.2 2008/07/02 00:22:54 gmcgarry Exp $	*/
+/*	$Id: qdivrem.c,v 1.3 2009/03/15 00:20:42 gmcgarry Exp $	*/
 /*	$NetBSD: qdivrem.c,v 1.1 2005/12/20 19:28:51 christos Exp $	*/
 
 /*-
@@ -64,8 +64,7 @@ static void shl(digit *p, int len, int sh);
  * leading zeros).
  */
 u_quad_t
-__qdivrem(uq, vq, arq)
-	u_quad_t uq, vq, *arq;
+__qdivrem(u_quad_t uq, u_quad_t vq, u_quad_t *arq)
 {
 	union uu tmp;
 	digit *u, *v, *q;
