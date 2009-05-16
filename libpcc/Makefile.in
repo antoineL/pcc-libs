@@ -1,6 +1,6 @@
-#	$Id: Makefile.in,v 1.11 2009/04/19 23:23:32 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.12 2009/05/16 03:56:18 gmcgarry Exp $
 #
-# Makefile.in for libpccsoftfloat.a
+# Makefile.in for libpcc.a
 #
 
 VPATH = @srcdir@
