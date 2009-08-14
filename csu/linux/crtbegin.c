@@ -1,4 +1,4 @@
-/*	$Id: crtbegin.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $	*/
+/*	$Id: crtbegin.c,v 1.5 2009/08/14 02:24:35 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 1998, 2001, 2002 The NetBSD Foundation, Inc.
  * All rights reserved.
@@ -37,18 +37,10 @@
 void __do_global_dtors_aux(void);
 void __do_global_ctors_aux(void);
 
-extern void (*__CTOR_LIST__[1])(void);
-extern void (*__DTOR_LIST__[1])(void);
-
-asm(	"	.section .ctors\n"
-	"	.align 2\n"
-	"__CTOR_LIST__:\n"
-	"	.long -1\n"
-	"	.section .dtors\n"
-	"	.align 2\n"
-	"__DTOR_LIST__:\n"
-	"	.long -1\n"
-);
+static void (*__CTOR_LIST__[1])(void)
+	__attribute__((section(".ctors"))) = { (void *)-1 };
+static void (*__DTOR_LIST__[1])(void)
+	__attribute__((section(".dtors"))) = { (void *)-1 };
 
 static void
 __ctors(void)
@@ -111,4 +103,4 @@ void __call_##func(void)						\
 MD_CALL_STATIC_FUNCTION(.init, __do_global_ctors_aux)
 MD_CALL_STATIC_FUNCTION(.fini, __do_global_dtors_aux)
 
-IDENT("$Id: crtbegin.c,v 1.4 2009/01/23 07:10:09 gmcgarry Exp $");
+IDENT("$Id: crtbegin.c,v 1.5 2009/08/14 02:24:35 gmcgarry Exp $");
