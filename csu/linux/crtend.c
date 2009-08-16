@@ -1,4 +1,4 @@
-/*      $Id: crtend.c,v 1.2 2008/07/02 00:19:20 gmcgarry Exp $	*/
+/*      $Id: crtend.c,v 1.3 2009/08/16 23:07:07 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -18,9 +18,19 @@
 #include "common.h"
 
 asm(	"	.section .ctors\n"
-	"	.long 0\n");
+#ifdef __x86_64__
+	"	.quad 0\n"
+#else
+	"	.long 0\n"
+#endif
+);
 
 asm(	"	.section .dtors\n"
-	"	.long 0\n");
+#ifdef __x86_64__
+	"	.quad 0\n"
+#else
+	"	.long 0\n"
+#endif
+);
 
-IDENT("$Id: crtend.c,v 1.2 2008/07/02 00:19:20 gmcgarry Exp $");
+IDENT("$Id: crtend.c,v 1.3 2009/08/16 23:07:07 gmcgarry Exp $");
