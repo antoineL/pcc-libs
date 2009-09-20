@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.8 2009/08/13 23:33:36 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.9 2009/09/20 00:50:58 gmcgarry Exp $
 #
 # top-level Makefile
 #
@@ -20,7 +20,7 @@ CFLAGS = @CFLAGS@
 MFLAGS += CC=$(CC) MACH=$(TARGMACH) PCCLIBDIR=$(PCCLIBDIR) VPATH=$(srcdir)/$(TARGOS) SRCDIR=$(srcdir)/$(TARGOS)/
 
 all clean install:
-	if test -e $(srcdir)/$(TARGOS)/Makefile ; then $(MAKE) -f $(srcdir)/$(TARGOS)/Makefile $(MFLAGS) $@ ; fi
+	if test -f $(srcdir)/$(TARGOS)/Makefile ; then $(MAKE) -f $(srcdir)/$(TARGOS)/Makefile $(MFLAGS) $@ ; fi
 
 distclean: clean
 	/bin/rm -f Makefile
