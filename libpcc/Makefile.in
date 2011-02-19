@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.16 2011/01/24 20:50:36 ragge Exp $
+#	$Id: Makefile.in,v 1.17 2011/02/19 17:40:30 ragge Exp $
 #
 # Makefile.in for libpcc.a
 #
@@ -27,6 +27,7 @@ RANLIB = @RANLIB@
 INSTALL = @INSTALL@
 
 HEADERS +=	float.h limits.h stdarg.h stdbool.h stddef.h \
+		iso646.h \
 		libpcc_float.h libpcc_limits.h libpcc_stdarg.h \
 		libpcc_stdbool.h libpcc_stddef.h
 
