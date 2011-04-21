@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.17 2011/02/19 17:40:30 ragge Exp $
+#	$Id: Makefile.in,v 1.18 2011/04/21 08:35:31 gmcgarry Exp $
 #
 # Makefile.in for libpcc.a
 #
@@ -38,7 +38,7 @@ OBJS +=		cmpdi2.o divdi3.o fixdfdi.o fixsfdi.o fixunsdfdi.o \
 
 OBJS +=		ashldi3.o ashrdi3.o lshrdi3.o bitcnt.o
 
-OBJS +=		_alloca.o
+OBJS +=		_alloca.o unwind.o
 
 OBJS +=		ssp.o
 
