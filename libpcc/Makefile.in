@@ -1,4 +1,4 @@
-#	$Id: Makefile.in,v 1.18 2011/04/21 08:35:31 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.19 2011/04/27 09:12:55 gmcgarry Exp $
 #
 # Makefile.in for libpcc.a
 #
@@ -20,6 +20,7 @@ PCCLIBDIR = $(libdir)/pcc/$(TARGET)/$(VERSION)/lib
 PCCINCDIR = $(libdir)/pcc/$(TARGET)/$(VERSION)/include
 
 CPPFLAGS += @CPPFLAGS@ -I$(srcdir) @ENDIAN_FLAG@ -Dos_$(TARGOS)
+CPPFLAGS += -isystem $(top_srcdir)/libpcc/include
 
 LIBS = @LIBS@
 AR = @AR@
