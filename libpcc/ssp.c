@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.8 2009/01/23 20:31:09 gmcgarry Exp $	*/
+/*      $Id: ssp.c,v 1.9 2011/05/15 08:57:51 plunky Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -15,8 +15,10 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #if defined(__lint__)
 #define __constructor /* define away */
@@ -37,6 +39,9 @@
 #else
 extern char *__progname;
 #endif
+
+void __ssp_init(void);
+void __stack_chk_fail(void);
 
 int __stack_chk_guard;
 
