@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.9 2011/05/15 08:57:51 plunky Exp $	*/
+/*      $Id: ssp.c,v 1.10 2011/05/16 18:52:17 plunky Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -18,7 +18,10 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
+
+#ifndef __MSC__
 #include <unistd.h>
+#endif
 
 #if defined(__lint__)
 #define __constructor /* define away */
