@@ -1,4 +1,4 @@
-/*      $Id: ssp.c,v 1.10 2011/05/16 18:52:17 plunky Exp $	*/
+/*      $Id: ssp.c,v 1.11 2011/05/17 00:19:19 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -19,7 +19,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef __MSC__
+#ifdef __MSC__
+#include <io.h>
+#define open(f,m) _open(f,m)
+#define read(h,b,n) _read(h,b,n)
+#define write(h,b,n) _write(h,b,n)
+#define close(h) _close(h)
+#else
 #include <unistd.h>
 #endif
 
