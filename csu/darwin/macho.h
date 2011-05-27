@@ -1,4 +1,4 @@
-/*	$Id: macho.h,v 1.1 2008/06/01 01:28:34 gmcgarry Exp $	*/
+/*	$Id: macho.h,v 1.2 2011/05/27 07:23:49 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -29,7 +29,7 @@ struct mach_header {
 
 #define LC_SEGMENT	0x01
 
-struct segment_command {
+struct segment_command_32 {
         uint32_t        cmd;
         uint32_t        cmdsize;
         char            segname[16];
@@ -43,11 +43,39 @@ struct segment_command {
         uint32_t        flags;
 };
 
-struct section {
+struct segment_command_64 {
+        uint32_t        cmd;
+        uint32_t        cmdsize;
+        char            segname[16];
+        uint64_t        vmaddr;
+        uint64_t        vmsize;
+        uint64_t        fileoff;
+        uint64_t        filesize;
+        uint32_t        maxprot;
+        uint32_t        initprot;
+        uint32_t        nsects;
+        uint32_t        flags;
+};
+
+struct section_32 {
         char            sectname[16];
         char            segname[16];
         uint32_t        addr;
         uint32_t        size;
+        uint32_t        offset;
+        uint32_t        align;
+        uint32_t        reloff;
+        uint32_t        nreloc;
+        uint32_t        flags;
+        uint32_t        reserved1;
+        uint32_t        reserved2;
+};
+
+struct section_64 {
+        char            sectname[16];
+        char            segname[16];
+        uint64_t        addr;
+        uint64_t        size;
         uint32_t        offset;
         uint32_t        align;
         uint32_t        reloff;

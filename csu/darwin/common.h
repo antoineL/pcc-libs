@@ -1,4 +1,4 @@
-/*	$Id: common.h,v 1.4 2009/02/14 11:40:28 gmcgarry Exp $	*/
+/*	$Id: common.h,v 1.5 2011/05/27 07:23:49 gmcgarry Exp $	*/
 /*-
  * Copyright (c) 2008 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -17,7 +17,7 @@
 
 #if defined(__ppc__)
 #define IDENT(x) asm(".cstring\n\t.ascii \"" x "\\0\"")
-#elif defined(__i386__)
+#elif defined(__i386__) || defined(__x86_64__)
 #define IDENT(x) asm(".cstring\n\t.ascii \"" x "\\0\"")
 #endif
 
