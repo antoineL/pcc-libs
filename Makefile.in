@@ -1,9 +1,9 @@
-#	$Id: Makefile.in,v 1.4 2011/04/27 09:12:55 gmcgarry Exp $
+#	$Id: Makefile.in,v 1.5 2011/08/21 09:00:54 plunky Exp $
 #
 # top-level Makefile
 #
 
-VPATH = @srcdir@
+@SET_MAKE@
 
 ALL_SUBDIRS=	libsoftfloat libpcc csu
 DIST_SUBDIRS=	$(ALL_SUBDIRS) libF77 libI77
