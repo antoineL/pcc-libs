@@ -1,4 +1,4 @@
-/*	$Id: crt0.c,v 1.1 2009/08/14 02:24:36 gmcgarry Exp $	*/
+/*	$Id: crt0.c,v 1.2 2012/09/20 19:38:24 ragge Exp $	*/
 /*-
  * Copyright (c) 2009 Gregory McGarry <g.mcgarry@ieee.org>
  *
@@ -29,9 +29,9 @@ asm("	.text				\n"
 "	movq (%rsp),%rdi		\n"
 "	leaq 16(%rsp,%rdi,8),%rdx	\n"
 "	leaq 8(%rsp),%rsi		\n"
-"	subq $16,%rsp			\n"
 "	andq $-16,%rsp			\n"
-"	jmp __start			\n");
+"	callq __start			\n");
+	/* cannot return */
 
 void
 __start(int argc, char *argv[], char *envp[])
@@ -50,4 +50,4 @@ __start(int argc, char *argv[], char *envp[])
 
 #include "common.c"
 
-IDENT("$Id: crt0.c,v 1.1 2009/08/14 02:24:36 gmcgarry Exp $");
+IDENT("$Id: crt0.c,v 1.2 2012/09/20 19:38:24 ragge Exp $");
